@@ -2,26 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Background image styling */
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/moviepic1.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Gradient overlay */
+.gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 0, 0, 0.6), rgba(0, 255, 255, 0.6)); /* Custom gradient colors */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Container styling */
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200px;
+  color: rgb(2, 0, 0);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Search label styling */
+.search-label {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Search input styling */
+.search-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 300px; /* Adjust as needed */
+}
+
+/* Search button styling */
+.search-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff5722; /* Custom button color */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Movie card styling */
+.movies-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.movie-card {
+  background-color: rgba(255, 255, 255, 0.8); /* Light background for movie cards */
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  max-width: 200px; /* Adjust card width */
+}
+
+/* Movie poster styling */
+.movie-poster {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+/* Footer styling */
+footer {
+  margin-top: 20px;
+  color: white;
+  text-align: center;
 }
