@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import Image from 'next/image';
 
 
 const MovieSearch = () => {
@@ -51,7 +52,14 @@ const MovieSearch = () => {
           {movies.length > 0 &&
             movies.map((movie) => (
               <div key={movie.imdbID} className="movie-card">
-                <img src={movie.Poster} alt={movie.Title} className="movie-poster" />
+               <Image
+               src={movie.Poster !== "N/A" ? movie.Poster : "/placeholder.jpg"} // Use a placeholder if no poster
+               alt={movie.Title}
+               width={200} // Provide a fixed width and height
+                height={300}
+                className="movie-poster"
+                />
+
                 <h2>{movie.Title}</h2>
                 <p>{movie.Year}</p>
               </div>
