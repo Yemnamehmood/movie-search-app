@@ -2,10 +2,18 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
+interface Movie {
+  imdbID: string;
+  Title: string;
+  Poster: string;
+  Year: string;
+}
+
+
 
 const MovieSearch = () => {
   const [movieTitle, setMovieTitle] = useState('');
-  const [movies, setMovies] = useState<any[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
 
   const fetchMovies = async () => {
     if (movieTitle.trim()) {
